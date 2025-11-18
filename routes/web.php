@@ -17,11 +17,20 @@ Route::get('/', function () {
     return view('landing.login.login');
 })->name('login');
 
-Route::get('/dashboard', function () {
-    return view('landing.dashboard.dashboard');
-})->name('dashboard');
 
-Route::name('/dashboard.')->prefix('dashboard.')->group(function () {
-    Route::view('/', '/dashboard')->name('dashboard');
+
+Route::prefix('dashboard')->group(function () {
+    Route::view('/', 'landing.dashboard.dashboard')->name('dashboard');
+});
+
+
+Route::prefix('transaksi')->group(function () {
+    Route::view('/transaksi','landing.transaksi.transaksi')->name('transaksi');
+    
+});
+
+Route::name('customer.')->prefix('customer')->group(function () {
+    Route::view('/customer','landing.customer.customer')->name('customer');
+    Route::view('/detail','landing.customer.customer-detail')->name('detail');
     
 });

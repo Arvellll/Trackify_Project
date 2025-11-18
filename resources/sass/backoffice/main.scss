@@ -1,0 +1,21 @@
+//login
+@use './page/login';
+
+//datatables
+@use './components/datatables';
+
+//sidebar
+@use './components/sidebar';
+
+//dashboard
+@use './page/dashboard';
+
+//customer
+@use './page/customer';
+
+//transaksi
+@use './page/transaksi';
+
+//modal
+@use './modal/modal';
+
